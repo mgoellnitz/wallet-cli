@@ -46,6 +46,9 @@ import static org.tron.common.utils.Hash.computeAddress;
 /** Implement Chinese Commercial Cryptographic Standard of SM2 */
 @Slf4j(topic = "crypto")
 public class SM2 implements Serializable, SignInterface {
+
+  private static final long serialVersionUID = 207019064237214L;
+
   private static BigInteger SM2_N =
       new BigInteger("FFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFF7203DF6B21C6052B53BBF40939D54123", 16);
   private static BigInteger SM2_P =
@@ -212,6 +215,7 @@ public class SM2 implements Serializable, SignInterface {
    * @return -
    * @deprecated per-point compression property will be removed in Bouncy Castle
    */
+  @Deprecated
   public static ECPoint compressPoint(ECPoint uncompressed) {
     return ecc_param.getCurve().decodePoint(uncompressed.getEncoded(true));
   }
@@ -224,6 +228,7 @@ public class SM2 implements Serializable, SignInterface {
    * @return -
    * @deprecated per-point compression property will be removed in Bouncy Castle
    */
+  @Deprecated
   public static ECPoint decompressPoint(ECPoint compressed) {
     return ecc_param.getCurve().decodePoint(compressed.getEncoded(false));
   }
@@ -823,6 +828,7 @@ public class SM2 implements Serializable, SignInterface {
    * @return -
    * @deprecated per-point compression property will be removed in Bouncy Castle
    */
+  @Deprecated
   public SM2 decompress() {
     if (!pub.isCompressed()) {
       return this;
@@ -832,6 +838,7 @@ public class SM2 implements Serializable, SignInterface {
   }
 
   /** @deprecated per-point compression property will be removed in Bouncy Castle */
+  @Deprecated
   public SM2 compress() {
     if (pub.isCompressed()) {
       return this;
@@ -900,6 +907,7 @@ public class SM2 implements Serializable, SignInterface {
    *
    * @return -
    */
+  @Deprecated
   public boolean isCompressed() {
     return pub.isCompressed();
   }

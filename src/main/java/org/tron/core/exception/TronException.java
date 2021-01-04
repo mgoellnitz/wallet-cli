@@ -2,6 +2,8 @@ package org.tron.core.exception;
 
 public class TronException extends Exception {
 
+  private static final long serialVersionUID = 206696367626485L;
+
   public TronException() {
     super();
   }

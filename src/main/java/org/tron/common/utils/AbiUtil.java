@@ -88,7 +88,7 @@ public class AbiUtil {
 
       Coder coder = getParamCoder(elementType);
 
-      List strings;
+      List<Object> strings;
       try {
         ObjectMapper mapper = new ObjectMapper();
         strings = mapper.readValue(arrayValues, List.class);
@@ -357,7 +357,7 @@ public class AbiUtil {
   public static byte[] encodeInput(String methodSign, String input) {
     ObjectMapper mapper = new ObjectMapper();
     input = "[" + input + "]";
-    List items;
+    List<Object> items;
     try {
       items = mapper.readValue(input, List.class);
     } catch (IOException e) {

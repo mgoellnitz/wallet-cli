@@ -45,6 +45,8 @@ import org.tron.core.config.Configuration;
  */
 public class Sha256Sm3Hash implements Serializable, Comparable<Sha256Sm3Hash> {
 
+  private static final long serialVersionUID = 206905994116748L;
+
   public static final int LENGTH = 32; // bytes
   public static final Sha256Sm3Hash ZERO_HASH = wrap(new byte[LENGTH]);
 

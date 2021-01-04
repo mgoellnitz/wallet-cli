@@ -250,6 +250,7 @@ public class ECKey implements Serializable, SignInterface {
    * @return -
    * @deprecated per-point compression property will be removed in Bouncy Castle
    */
+  @Deprecated
   public static ECPoint compressPoint(ECPoint uncompressed) {
     return CURVE.getCurve().decodePoint(uncompressed.getEncoded(true));
   }
@@ -262,6 +263,7 @@ public class ECKey implements Serializable, SignInterface {
    * @return -
    * @deprecated per-point compression property will be removed in Bouncy Castle
    */
+  @Deprecated
   public static ECPoint decompressPoint(ECPoint compressed) {
     return CURVE.getCurve().decodePoint(compressed.getEncoded(false));
   }
@@ -688,6 +690,7 @@ public class ECKey implements Serializable, SignInterface {
    * @return -
    * @deprecated per-point compression property will be removed in Bouncy Castle
    */
+  @Deprecated
   public ECKey decompress() {
     if (!pub.isCompressed()) {
       return this;
@@ -697,6 +700,7 @@ public class ECKey implements Serializable, SignInterface {
   }
 
   /** @deprecated per-point compression property will be removed in Bouncy Castle */
+  @Deprecated
   public ECKey compress() {
     if (pub.isCompressed()) {
       return this;
@@ -815,6 +819,7 @@ public class ECKey implements Serializable, SignInterface {
    *
    * @return -
    */
+  @Deprecated
   public boolean isCompressed() {
     return pub.isCompressed();
   }
@@ -933,6 +938,7 @@ public class ECKey implements Serializable, SignInterface {
    * @return decrypted cipher, equal length to the cipher.
    * @deprecated should not use EC private scalar value as an AES key
    */
+  @Deprecated
   public byte[] decryptAES(byte[] cipher) {
 
     if (privKey == null) {

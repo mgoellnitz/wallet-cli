@@ -5,6 +5,8 @@ package org.tron.core.exception;
  */
 public class CipherException extends Exception {
 
+    private static final long serialVersionUID = 206796003442049L;
+
     public CipherException(String message) {
         super(message);
     }

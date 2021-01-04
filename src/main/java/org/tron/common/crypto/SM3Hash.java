@@ -39,6 +39,8 @@ import static com.google.common.base.Preconditions.checkArgument;
  */
 public class SM3Hash implements Serializable, Comparable<SM3Hash>, HashInterface {
 
+  private static final long serialVersionUID = 206932327367107L;
+
   public static final int LENGTH = 32; // bytes
   public static final SM3Hash ZERO_HASH = wrap(new byte[LENGTH]);
 
