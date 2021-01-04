@@ -496,7 +496,7 @@ public class JsonFormat {
     }
 
     // Finally, look for extensions
-    extension = extensionRegistry.findExtensionByName(name);
+    extension = extensionRegistry.findMutableExtensionByName(name);
     if (extension != null) {
       if (extension.descriptor.getContainingType() != type) {
         throw tokenizer.parseExceptionPreviousToken("Extension \"" + name
